@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- AppBar com título da loja -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="HamburgeriaZ"
+        android:titleTextColor="@android:color/white"
+        app:titleTextAppearance="@style/EstiloTexto" />
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                     <ImageView
+        android:id="@+id/logoBanner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/logo_desc" />
+
+            <!-- Texto "Faça seu pedido" -->
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:text="Faça seu pedido"
+                style="@style/EstiloTexto" />
+
+            <!-- Nome do cliente -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do Cliente"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/edtNomeCliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Digite seu nome"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Adicionais (checkbox) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Escolha os adicionais:"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <CheckBox
+                android:id="@+id/checkBacon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bacon" />
+
+            <CheckBox
+                android:id="@+id/checkQueijo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Queijo" />
+
+
+            <CheckBox
+                android:id="@+id/checkOvo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="onion rings" />
+
+            <!-- Espaçamento -->
+            <View android:layout_height="16dp" android:layout_width="match_parent"/>
+
+            <!-- Quantidade de hambúrgueres -->
+            <TextView
+                android:id="@+id/txtQuantidadeLabel"
+                android:text="Quantidade"
+                style="@style/EstiloTexto" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btnSubtrair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+
+                <TextView
+                    android:id="@+id/txtQuantidade"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="16dp" />
+
+                <Button
+                    android:id="@+id/btnAdicionar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+" />
+            </LinearLayout>
+
+            <!-- Espaçamento -->
+            <View android:layout_height="16dp" android:layout_width="match_parent"/>
+
+            <!-- Resumo do pedido -->
+            <TextView
+                android:id="@+id/txtResumoPedido"
+                android:text="Resumo do pedido"
+                style="@style/EstiloTexto" />
+
+            <!-- Preço total -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preço total:"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/txtPrecoTotal"
+                android:text="R$ 20,00"
+                style="@style/EstiloTexto"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Botão enviar pedido -->
+            <Button
+                android:id="@+id/btnEnviarPedido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enviar Pedido" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
